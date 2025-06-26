@@ -1,0 +1,163 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To My Heartbeat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      color: #4d0039;
+      overflow-x: hidden;
+    }
+
+    .welcome-box {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .glow-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #d6336c;
+      text-shadow: 0 0 10px #ffa6c9, 0 0 20px #ff99cc;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-box p {
+      font-size: 1.1rem;
+      margin: 0.8rem 0;
+    }
+
+    .love-note {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #b30059;
+      margin-top: 1.5rem;
+    }
+
+    .welcome-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem auto;
+    }
+
+    .welcome-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(255, 105, 135, 0.25);
+      transition: transform 0.4s ease;
+    }
+
+    .welcome-img:hover {
+      transform: scale(1.05);
+    }
+
+    .button-row {
+      text-align: center;
+      margin: 2rem 0 3rem;
+    }
+
+    .start-btn {
+      background-color: #ff4d88;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      margin: 0 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background-color: #e60073;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="fade-out heart-bg">
+  <!-- Floating hearts -->
+  <div class="heart-container" id="hearts"></div>
+
+  <!-- Background music toggle -->
+  <!-- Persistent Audio Player -->
+
+  <button id="music-btn" class="music-toggle">🔊</button>
+
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="message.html">Message</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="moments.html">Special Moments</a></li>
+      <li><a href="final.html">Final Note</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Welcome Section -->
+  <main class="welcome-box">
+    <h1 class="glow-title">To My Heartbeat 💓</h1>
+    <p>Welcome to your birthday surprise site — a little space full of love, just for you.</p>
+    <p>Pick wherever your heart wants to go first 💌</p>
+
+    <div class="welcome-gallery">
+      <img src="assests/Biswajit1.jpg" alt="Smile" class="welcome-img fade-in">
+      <img src="assests/Biswajit2.jpg" alt="Candid" class="welcome-img zoom-in">
+      <img src="assests/Biswajit3.jpg" alt="Together" class="welcome-img bounce-in">
+    </div>
+
+    <p class="love-note">You're not just my person, you're my whole world. 🌍💫</p>
+  </main>
+
+  <!-- Navigation Buttons -->
+  <div class="button-row">
+    <a href="index.html" class="start-btn">← Back</a>
+    <a href="message.html" class="start-btn">Next →</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    With all my love, always yours 💖
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+  const musicBtn = document.getElementById("music-btn");
+
+  // Send toggle request to main frame
+  musicBtn.addEventListener("click", () => {
+    window.parent.postMessage("toggleMusic", "*");
+  });
+
+  // Receive music state update
+  window.addEventListener("message", (event) => {
+    if (event.data === "musicPlaying") {
+      musicBtn.textContent = "🔊";
+    } else if (event.data === "musicPaused") {
+      musicBtn.textContent = "🔇";
+    }
+  });
+
+</script>
+
+
+</body>
+</html>

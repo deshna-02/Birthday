@@ -1,0 +1,168 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="heart-bg fade-out">
+  <div class="heart-container" id="hearts"></div>
+
+  <!-- Background Music -->
+  <!-- Persistent Audio Player -->
+
+  <button id="music-btn" class="music-toggle">🔊</button>
+
+  <!-- Navbar -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="message.html">Message</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="moments.html">Special Moments</a></li>
+      <li><a href="final.html">Final Note</a></li>
+    </ul>
+  </nav>
+
+    <main class="page-wrapper">
+
+  <!-- Gallery Section -->
+  <section class="gallery-page">
+    <h1>Our Beautiful Memories 💞</h1>
+    <div class="gallery-grid">
+      <div class="polaroid" onclick="openLightbox('img1')">
+        <img src="assests/photo1.jpg" alt="photo1">
+        <p class="caption">First photo where we both were together!!</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img2')">
+        <img src="assests/photo2.jpg" alt="photo2">
+        <p class="caption">Jhumka🌊</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img3')">
+        <img src="assests/photo3.jpg" alt="photo3">
+        <p class="caption">Freshers 💃🕺</p>
+      </div>
+      <!-- Duplicate blocks can be replaced with real images -->
+      <div class="polaroid" onclick="openLightbox('img4')">
+        <img src="assests/photo4.jpg" alt="photo4">
+        <p class="caption">Dotfest🎶</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img5')">
+        <img src="assests/photo5.JPG" alt="photo5">
+        <p class="caption">Tasveer🥰</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img6')">
+        <img src="assests/photo6.jpg" alt="photo6">
+        <p class="caption">Advaita!</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img7')">
+        <img src="assests/photo7.JPG" alt="photo7">
+        <p class="caption">Jaydev Vatika🌲</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img9')">
+        <img src="assests/photo9.jpg" alt="photo9">
+        <p class="caption">Lab mai aapke random clicks</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img8')">
+        <img src="assests/photo8.jpg" alt="photo8">
+        <p class="caption">Snapchat selfies😂</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img10')">
+        <img src="assests/photo10.jpg" alt="photo10">
+        <p class="caption">Busy in phone as alwayss</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img11')">
+        <img src="assests/photo11.jpg" alt="photo11">
+        <p class="caption">Acting cutee(But u are actually👀)</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img12')">
+        <img src="assests/photo12.jpg" alt="photo12">
+        <p class="caption">Flexing jawline😂</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img13')">
+        <img src="assests/photo13.jpg" alt="photo13">
+        <p class="caption">Fav hangout place😏</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img14')">
+        <img src="assests/photo14.jpg" alt="photo14">
+        <p class="caption">I loved this gift!!</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img15')">
+        <img src="assests/photo15.jpg" alt="photo15">
+        <p class="caption">Our first date💕</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img16')">
+        <img src="assests/photo16.jpg" alt="photo16">
+        <p class="caption">Where I confessed🫣</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img17')">
+        <img src="assests/photo17.jpg" alt="photo17">
+        <p class="caption">Bas aese hi hath pakde raho hamesaa</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img18')">
+        <img src="assests/photo18.jpg" alt="photo18">
+        <p class="caption">Your fav pic📸</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img19')">
+        <img src="assests/photo19.jpg" alt="photo19">
+        <p class="caption">Cute photo right?👀</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img20')">
+        <img src="assests/photo20.jpg" alt="photo20">
+        <p class="caption">One of the days I enjoyed the most😘</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img21')">
+        <img src="assests/photo21.jpg" alt="photo21">
+        <p class="caption">Best surprise gift💖</p>
+      </div>
+      <div class="polaroid" onclick="openLightbox('img22')">
+        <img src="assests/photo22.jpg" alt="photo22">
+        <p class="caption">Love you forever💕</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged memory" />
+    <p id="lightbox-caption"></p>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="button-row">
+    <a href="message.html" class="start-btn">← Back</a>
+    <a href="moments.html" class="start-btn">Next →</a>
+  </div>
+
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    Forever captured in our memories ❤️
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+  const musicBtn = document.getElementById("music-btn");
+
+  // Send toggle request to main frame
+  musicBtn.addEventListener("click", () => {
+    window.parent.postMessage("toggleMusic", "*");
+  });
+
+  // Receive music state update
+  window.addEventListener("message", (event) => {
+    if (event.data === "musicPlaying") {
+      musicBtn.textContent = "🔊";
+    } else if (event.data === "musicPaused") {
+      musicBtn.textContent = "🔇";
+    }
+  });
+
+</script>
+
+
+
+</body>
+</html>

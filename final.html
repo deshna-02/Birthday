@@ -1,0 +1,104 @@
+<!-- final.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Final Note</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+    .love-note-box {
+      font-family: 'Great Vibes', cursive;
+      background: #fff0f6;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 12px;
+      max-width: 650px;
+      font-size: 1.5rem;
+      line-height: 2;
+      color: #880e4f;
+      box-shadow: 0 0 20px rgba(255, 140, 180, 0.2);
+      text-align: center;
+    }
+
+    .signature {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      margin-top: 2rem;
+      color: #ad1457;
+    }
+  </style>
+</head>
+<body class="heart-bg fade-out">
+  <div class="heart-container" id="hearts"></div>
+
+  <!-- 🌸 Background Music -->
+  <!-- Persistent Audio Player -->
+
+  <button id="music-btn" class="music-toggle">🔊</button>
+
+  <!-- 🌸 Navbar -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="message.html">Message</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="moments.html">Special Moments</a></li>
+      <li><a href="final.html" class="active">Final Note</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-wrapper">
+    <h2 class="glow-title">Final Note 💌</h2>
+
+    <!-- 💖 Love Note Box -->
+    <div class="love-note-box">
+      This little website was made with all my heart, for the one who makes every moment feel like magic. 💫<br><br>
+      I hope you felt the love and joy behind every page and pixel — you truly mean the world to me.  
+      Here's to more birthdays, more memories, more us... always and forever. 🌙💖
+      <p class="signature">Forever Yours,<br><strong>Swedeshna</strong></p>
+    </div>
+  <!-- Add anywhere in home.html or final.html -->
+<p style="text-align:center; margin-top: 2rem;">
+  <a href="secret.html" style="font-size: 0.9rem; color:#ad1457; text-decoration: underline;">
+    💌 Psst... Click here if you love surprises
+  </a>
+</p>
+
+
+  <div class="button-row">
+    <a href="moments.html" class="start-btn">← Back</a>
+    <a href="index.html" class="start-btn">🎉 Start Over</a> <!-- Update as per page -->
+  </div>
+
+    </main>
+  <footer class="footer">
+    Happy Birthday, My Love 💗
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+  const musicBtn = document.getElementById("music-btn");
+
+  // Send toggle request to main frame
+  musicBtn.addEventListener("click", () => {
+    window.parent.postMessage("toggleMusic", "*");
+  });
+
+  // Receive music state update
+  window.addEventListener("message", (event) => {
+    if (event.data === "musicPlaying") {
+      musicBtn.textContent = "🔊";
+    } else if (event.data === "musicPaused") {
+      musicBtn.textContent = "🔇";
+    }
+  });
+
+  // Request current state on load (optional)
+</script>
+
+
+
+</body>
+</html>

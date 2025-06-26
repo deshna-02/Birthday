@@ -1,0 +1,141 @@
+<!-- moments.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Special Moments</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="heart-bg fade-out">
+  <div class="heart-container" id="hearts"></div>
+
+  <!-- 🌸 Music -->
+  <!-- Persistent Audio Player -->
+
+  <button id="music-btn" class="music-toggle">🔊</button>
+
+  <!-- 🌸 Navbar -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="message.html">Message</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="moments.html" class="active">Special Moments</a></li>
+      <li><a href="final.html">Final Note</a></li>
+    </ul>
+  </nav>
+    <main class="page-wrapper">
+
+
+  <!-- 💖 Page Wrapper (ensures full scroll height) -->
+  <main class="moments-page">
+    <h1>Special Moments We Cherish 💞</h1>
+
+    <!-- 🎞️ Video Carousel -->
+    <div class="carousel-container">
+      <button class="carousel-btn prev" onclick="changeVideo(-1)">❮</button>
+      <video id="videoCarousel" controls>
+        <source src="assests/video1.mp4" type="video/mp4" />
+      </video>
+      <button class="carousel-btn next" onclick="changeVideo(1)">❯</button>
+    </div>
+
+    <!-- 💌 Reasons I Love You -->
+    <section class="reasons-section fade-in">
+  <h2>Reasons I Love You ❤️</h2>
+  <ul class="reasons-list">
+  <li onclick="showFloatingHeart(event)">💖 You came into my life when I least expected it, but exactly when I needed you.</li>
+    <li onclick="showFloatingHeart(event)">🌸 You always know how to make me laugh, even when I’m having the worst day.</li>
+    <li onclick="showFloatingHeart(event)">🎈 Your hugs feel like home — warm, safe, and everything I ever needed.</li>
+    <li onclick="showFloatingHeart(event)">💬 You truly listen — not just to my words, but to the silences between them.</li>
+    <li onclick="showFloatingHeart(event)">💫 You believed in me even when I doubted myself.</li>
+    <li onclick="showFloatingHeart(event)">🎶 You remember the smallest details — my favorite songs, my moods, my little quirks.</li>
+    <li onclick="showFloatingHeart(event)">📸 You make every memory feel like a moment from a beautiful love story.</li>
+    <li onclick="showFloatingHeart(event)">🧡 You were patient when I was confused, and kind when I was distant.</li>
+    <li onclick="showFloatingHeart(event)">🌹 You stayed when I gave you reasons to walk away.</li>
+    <li onclick="showFloatingHeart(event)">💌 You once told me “I’m not going anywhere” — and you kept your word.</li>
+    <li onclick="showFloatingHeart(event)">🌈 You see the best in me, even when I’m at my worst.</li>
+    <li onclick="showFloatingHeart(event)">👀 You look at me like I’m the most special person in the world.</li>
+    <li onclick="showFloatingHeart(event)">🍰 You never fail to make ordinary days feel magical.</li>
+    <li onclick="showFloatingHeart(event)">✨ You make me feel wanted, cherished, and adored — every single day.</li>
+    <li onclick="showFloatingHeart(event)">🎨 You love me without trying to change me.</li>
+    <li onclick="showFloatingHeart(event)">💑 You’re not just my boyfriend — you’re my best friend, my safe space, my forever person.</li>
+    <li onclick="showFloatingHeart(event)">⏳ You’ve seen me fall apart and never once stopped holding my hand.</li>
+    <li onclick="showFloatingHeart(event)">🌻 Your irritating me and making jokes on me and loving me double of that is the best part!!</li>
+    <li onclick="showFloatingHeart(event)">🫶 You remind me what real love looks and feels like.</li>
+    <li onclick="showFloatingHeart(event)">🌙 You taught me what it means to choose someone again and again, even through chaos.</li>
+    <li onclick="showFloatingHeart(event)">❤️‍🔥 You give effort — genuine, selfless effort — and that means the world to me.</li>
+    <li onclick="showFloatingHeart(event)">💍 Because with you, I’ve found a kind of love I never even knew I needed and deserved.</li>
+</ul>
+</section>
+
+    <!-- 🎟️ Gift Tickets -->
+    <div class="tickets-section">
+  <h2>Love Coupons 🎟️</h2>
+  <div class="coupon-container" id="coupon-list" style="filter: blur(8px); pointer-events: none; transition: filter 0.5s ease;">
+    <div class="ticket">🫂 One Long Tight Hug</div>
+    <div class="ticket">😘 Day out (Of your choice)</div>
+    <div class="ticket">😌 Date on Me</div>
+    <div class="ticket">💋 Surprise Kiss Coupon</div>
+    <div class="ticket">💕 A special coupon — whatever you want</div>
+  </div>
+
+  <div class="unlock-section">
+    <p>Enter the secret code to unlock your love coupons 🔐</p>
+    <input type="text" id="code-input" placeholder="Enter secret code..." />
+    <button onclick="unlockCoupons()">Redeem</button>
+    <p id="code-status" class="status-message"></p>
+  </div>
+</div>
+
+
+    <!-- 🎵 Hidden Audio Surprise -->
+    <div class="audio-surprise">
+      <button onclick="revealSurprise()">Click Me 💫</button>
+      <div id="audio-box" style="display:none;">
+        <p>Surprise! One of your fav song 💕</p>
+        <audio id="surprise-audio" controls>
+      <source src="assests/Jugrafiyaaa.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+      </div>
+    </div>
+
+    <!-- ⏮️⏭️ Button Row -->
+    <div class="button-row">
+      <a href="gallery.html" class="start-btn">← Back</a>
+      <a href="final.html" class="start-btn">Next →</a>
+    </div>
+  </main>
+    </main>
+
+  <!-- 💖 Footer -->
+  <footer class="footer">
+    These moments are pieces of my heart ❤️
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+  const musicBtn = document.getElementById("music-btn");
+
+  // Send toggle request to main frame
+  musicBtn.addEventListener("click", () => {
+    window.parent.postMessage("toggleMusic", "*");
+  });
+
+  // Receive music state update
+  window.addEventListener("message", (event) => {
+    if (event.data === "musicPlaying") {
+      musicBtn.textContent = "🔊";
+    } else if (event.data === "musicPaused") {
+      musicBtn.textContent = "🔇";
+    }
+  });
+
+  // Request current state on load (optional)
+</script>
+
+
+</body>
+</html>

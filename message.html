@@ -1,0 +1,77 @@
+<!-- message.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Message</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="heart-bg fade-out">
+  <div class="heart-container" id="hearts"></div>
+    <!-- Persistent Audio Player -->
+
+  <button id="music-btn" class="music-toggle">🔊</button>
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="message.html">Message</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="moments.html">Special Moments</a></li>
+      <li><a href="final.html">Final Note</a></li>
+    </ul>
+  </nav>
+    <main class="page-wrapper">
+  <section class="page-content message-page">
+  <div class="message-card">
+    
+    <!-- Typing Heart Message -->
+    <div class="typed-message">
+      <h2 class="section-title">My Message to You ❤️</h2>
+      <p id="typedText" class="love-paragraph"></p>
+      <p class="signature">Forever yours,<br><span>Swedeshna🧁</span></p>
+    </div>
+
+    <!-- Couple Photo -->
+    <div class="message-photo">
+      <img src="assests/message.jpg" alt="Us Together" />
+    </div>
+
+  </div>
+</section>
+
+
+  <div class="button-row">
+    <a href="home.html" class="start-btn">← Back</a>
+    <a href="gallery.html" class="start-btn">Next →</a> <!-- Update as per page -->
+  </div>
+</main>
+  <footer class="footer">
+    With all my love, always yours 💖
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+  const musicBtn = document.getElementById("music-btn");
+
+  // Send toggle request to main frame
+  musicBtn.addEventListener("click", () => {
+    window.parent.postMessage("toggleMusic", "*");
+  });
+
+  // Receive music state update
+  window.addEventListener("message", (event) => {
+    if (event.data === "musicPlaying") {
+      musicBtn.textContent = "🔊";
+    } else if (event.data === "musicPaused") {
+      musicBtn.textContent = "🔇";
+    }
+  });
+
+  // Request current state on load (optional)
+</script>
+
+
+
+</body>
+</html>
